@@ -20,11 +20,11 @@ export class AppComponent {
     }
   }
 
-  changeSearch($event: KeyboardEvent) {
-    if ($event.key === 'Escape') {
+  changeSearch(inputSearchValue: string, inputKey: string) {
+    if (inputKey === 'Escape') {
       this.searchValue = '';
     } else {
-      this.searchValue = $event.target['value'];
+      this.searchValue = inputSearchValue;
     }
   }
 }
