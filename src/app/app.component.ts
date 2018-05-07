@@ -9,11 +9,22 @@ export class AppComponent {
   title = 'app';
   url = 'http://blog.miniasp.com/';
   imgurl = '/assets/images/logo.png';
+  searchValue = '';
+
   constructor() {
   }
+
   changeTitle(altKey: boolean) {
     if (altKey) {
       this.title  = 'The Will Will Web';
+    }
+  }
+
+  changeSearch($event: KeyboardEvent) {
+    if ($event.key === 'Escape') {
+      this.searchValue = '';
+    } else {
+      this.searchValue = $event.target['value'];
     }
   }
 }
